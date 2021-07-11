@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import br.edu.ifce.sistematransporteapi.domain.itinerario.model.Itinerario;
 import br.edu.ifce.sistematransporteapi.domain.itinerario.repository.ItinerarioRepository;
+import br.edu.ifce.sistematransporteapi.domain.itinerario.vo.ItinerarioVO;
 
 @Service
 public class SalvaItinerarioService {
