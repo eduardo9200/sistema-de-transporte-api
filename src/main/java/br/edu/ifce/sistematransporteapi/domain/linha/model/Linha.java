@@ -1,7 +1,6 @@
 package br.edu.ifce.sistematransporteapi.domain.linha.model;
 
 import javax.persistence.Column;
-import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,8 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import br.edu.ifce.sistematransporteapi.application.converter.CategoriaLinhaConverter;
-import br.edu.ifce.sistematransporteapi.application.enums.CategoriaLinha;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -32,11 +29,6 @@ public class Linha {
 	@Column(name = "NOME")
 	@Getter @Setter
 	private String nome;
-	
-	@Convert(converter = CategoriaLinhaConverter.class)
-	@Column(name = "CATEGORIA")
-	@Getter @Setter
-	private CategoriaLinha categoria;
 	
 	@Column(name = "ATIVA")
 	@Getter @Setter
