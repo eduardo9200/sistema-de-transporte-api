@@ -2,6 +2,7 @@ package br.edu.ifce.sistematransporteapi.application.enums;
 
 public enum ItemPesquisa {
 
+	TODOS(0L),
 	NUMERO(1L),
 	LINHA(2L),
 	LOGRADOURO(3L);
