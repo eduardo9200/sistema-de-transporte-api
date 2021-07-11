@@ -6,29 +6,10 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import br.edu.ifce.sistematransporteapi.domain.itinerario.model.Itinerario;
-import br.edu.ifce.sistematransporteapi.domain.itinerario.vo.ResultadoBuscaVO;
+import br.edu.ifce.sistematransporteapi.domain.itinerario.vo.ItinerarioVO;
 
 @Service
 public class ItinerarioBuilderService {
-
-	/*public ResultadoBuscaVO buildToRead(Itinerario itinerario) {
-		ResultadoBuscaVO resultado = new ResultadoBuscaVO();
-		resultado.setNumeroLinha(itinerario.getLinha().getNumero());
-		resultado.setNomeLinha(itinerario.getLinha().getNome());
-		resultado.setItinerario(itinerario.getDescricao());
-		resultado.setResumoItinerario(itinerario.getResumo());
-		resultado.setSentido(itinerario.getSentido());
-		resultado.setLinhaAtiva(itinerario.getLinha().getAtiva());
-		return resultado;
-	}*/
-	
-	public List<ResultadoBuscaVO> buildToRead(List<Itinerario> itinerarios) {
-		List<ResultadoBuscaVO> resultados = new ArrayList<>();
-		for(Itinerario i : itinerarios) {
-			resultados.add(this.buildToRead(i));
-		}
-		return resultados;
-	}
 	
 	public ItinerarioVO buildToRead(Itinerario itinerario) {
 		ItinerarioVO vo = new ItinerarioVO();
@@ -44,6 +25,7 @@ public class ItinerarioBuilderService {
 	
 	public Itinerario buildToCreate(ItinerarioVO vo) {
 		Itinerario itinerario = new Itinerario();
+		itinerario.setId(vo.getId());
 		itinerario.setLinha(vo.getLinha());
 		itinerario.setDescricao(vo.getDescricao());
 		itinerario.setResumo(vo.getResumo());
@@ -51,5 +33,13 @@ public class ItinerarioBuilderService {
 		itinerario.setPontoInicial(vo.getPontoInicial());
 		itinerario.setPontoFinal(vo.getPontoFinal());
 		return itinerario;
+	}
+	
+	public List<ItinerarioVO> buildToRead(List<Itinerario> itinerarios) {
+		List<ItinerarioVO> voList = new ArrayList<>();
+		for(Itinerario i : itinerarios) {
+			voList.add(this.buildToRead(i));
+		}
+		return voList;
 	}
 }

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import br.edu.ifce.sistematransporteapi.application.enums.ItemPesquisa;
 import br.edu.ifce.sistematransporteapi.domain.itinerario.model.Itinerario;
 import br.edu.ifce.sistematransporteapi.domain.itinerario.repository.ItinerarioRepository;
-import br.edu.ifce.sistematransporteapi.domain.itinerario.vo.ResultadoBuscaVO;
+import br.edu.ifce.sistematransporteapi.domain.itinerario.vo.ItinerarioVO;
 
 @Service
 public class BuscaItinerarioService {
@@ -19,19 +19,25 @@ public class BuscaItinerarioService {
 	@Autowired
 	private ItinerarioBuilderService itinerarioBuilderService;
 	
-	public List<ResultadoBuscaVO> buscaItinerario(Long itemId, String texto) {
+	public List<ItinerarioVO> buscaItinerario(Long itemId, String texto) {
 		ItemPesquisa item = ItemPesquisa.byId(itemId);
 		List<Itinerario> itinerarios;
 		
 		switch(item) {
+		case TODOS:
+			itinerarios = itinerarioRepository.buscaTodosItinerarios();
+			break;
 		case NUMERO:
 			itinerarios = itinerarioRepository.itinerariosDaLinhaByNumero(Long.parseLong(texto));
+			break;
 		case LINHA:
 			itinerarios = itinerarioRepository.itinerariosDaLinhaByNome(texto);
+			break;
 		case LOGRADOURO:
 			itinerarios = itinerarioRepository.itinerariosByLogradouro(texto);
+			break;
 		default:
-			itinerarios = new ArrayList<>();
+			itinerarios = new ArrayList<Itinerario>();
 		}
 		
 		return itinerarioBuilderService.buildToRead(itinerarios);
