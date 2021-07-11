@@ -1,4 +1,4 @@
-package br.edu.ifce.sistematransporteapi.domain.itinerario.service;
+package br.edu.ifce.sistematransporteapi.domain.itinerario.vo;
 
 import br.edu.ifce.sistematransporteapi.application.enums.SentidoLinha;
 import br.edu.ifce.sistematransporteapi.domain.linha.model.Linha;
