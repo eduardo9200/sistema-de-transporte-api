@@ -1,18 +1,15 @@
 package br.edu.ifce.sistematransporteapi.domain.horario.model;
 
-import java.time.LocalTime;
-
 import javax.persistence.Column;
-import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import br.edu.ifce.sistematransporteapi.application.converter.DiaDaSemanaConverter;
-import br.edu.ifce.sistematransporteapi.application.enums.DiaDaSemana;
+import br.edu.ifce.sistematransporteapi.domain.linha.model.Linha;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -27,12 +24,31 @@ public class Horario {
 	@Getter @Setter
 	private Long id;
 	
-	@Convert(converter = DiaDaSemanaConverter.class)
-	@Column(name = "DIADASEMANA")
+	@JoinColumn(name = "IDLINHA")
 	@Getter @Setter
-	private DiaDaSemana dia;
+	private Linha linha;
 	
 	@Column(name = "HORA")
 	@Getter @Setter
-	private LocalTime hora;
+	private String inicioDiaUtil;
+	
+	@Column(name = "HORA")
+	@Getter @Setter
+	private String inicioSabado;
+	
+	@Column(name = "HORA")
+	@Getter @Setter
+	private String inicioDomingoEFeriado;
+	
+	@Column(name = "HORA")
+	@Getter @Setter
+	private String fimDiaUtil;
+	
+	@Column(name = "HORA")
+	@Getter @Setter
+	private String fimSabado;
+	
+	@Column(name = "HORA")
+	@Getter @Setter
+	private String fimDomingoEFeriado;
 }
