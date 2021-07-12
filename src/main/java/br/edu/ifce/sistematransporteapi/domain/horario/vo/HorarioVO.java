@@ -14,4 +14,7 @@ public class HorarioVO {
 	private String fimDiaUtil;
 	private String fimSabado;
 	private String fimDomingoEFeriado;
+	private Long intervaloDiaUtil;
+	private Long intervaloSabado;
+	private Long intervaloDomingoEFeriado;
 }

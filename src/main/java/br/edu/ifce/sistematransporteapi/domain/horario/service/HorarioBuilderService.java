@@ -21,6 +21,9 @@ public class HorarioBuilderService {
 		vo.setFimDiaUtil(horario.getFimDiaUtil());
 		vo.setFimSabado(horario.getFimSabado());
 		vo.setFimDomingoEFeriado(horario.getFimDomingoEFeriado());
+		vo.setIntervaloDiaUtil(horario.getIntervaloDiaUtil());
+		vo.setIntervaloSabado(horario.getIntervaloSabado());
+		vo.setIntervaloDomingoEFeriado(horario.getIntervaloDomingoEFeriado());
 		return vo;
 	}
 	
@@ -34,6 +37,9 @@ public class HorarioBuilderService {
 		horario.setFimDiaUtil(vo.getFimDiaUtil());
 		horario.setFimSabado(vo.getFimSabado());
 		horario.setFimDomingoEFeriado(vo.getFimDomingoEFeriado());
+		horario.setIntervaloDiaUtil(vo.getIntervaloDiaUtil());
+		horario.setIntervaloSabado(vo.getIntervaloSabado());
+		horario.setIntervaloDomingoEFeriado(vo.getIntervaloDomingoEFeriado());
 		return horario;
 	}
 	

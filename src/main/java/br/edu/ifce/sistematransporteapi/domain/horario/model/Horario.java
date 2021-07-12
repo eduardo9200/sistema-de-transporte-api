@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -24,6 +25,7 @@ public class Horario {
 	@Getter @Setter
 	private Long id;
 	
+	@ManyToOne
 	@JoinColumn(name = "IDLINHA")
 	@Getter @Setter
 	private Linha linha;
@@ -51,4 +53,16 @@ public class Horario {
 	@Column(name = "HORA")
 	@Getter @Setter
 	private String fimDomingoEFeriado;
+	
+	@Column(name = "INTERVALODIAUTIL")
+	@Getter @Setter
+	private Long intervaloDiaUtil;
+	
+	@Column(name = "INTERVALOSABADO")
+	@Getter @Setter
+	private Long intervaloSabado;
+	
+	@Column(name = "INTERVALODOMINGOEFERIADO")
+	@Getter @Setter
+	private Long intervaloDomingoEFeriado;
 }
