@@ -1,6 +1,6 @@
 package br.edu.ifce.sistematransporteapi.domain.itinerario.service;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +37,7 @@ public class BuscaItinerarioService {
 			itinerarios = itinerarioRepository.itinerariosByLogradouro(texto);
 			break;
 		default:
-			itinerarios = new ArrayList<Itinerario>();
+			itinerarios = Collections.emptyList();
 		}
 		
 		return itinerarioBuilderService.buildToRead(itinerarios);

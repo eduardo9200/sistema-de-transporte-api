@@ -1,6 +1,6 @@
 package br.edu.ifce.sistematransporteapi.domain.linha.service;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +38,7 @@ public class BuscaLinhaService {
 			linhas = this.linhaRepository.buscaPeloNome(texto);
 			break;
 		default:
-			linhas = new ArrayList<Linha>();
+			linhas = Collections.emptyList();
 		}
 		
 		return this.linhaBuilderService.buildToRead(linhas);
