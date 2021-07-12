@@ -17,6 +17,7 @@ public class LinhaBuilderService {
 		linha.setNumero(vo.getNumero());
 		linha.setNome(vo.getNome());
 		linha.setAtiva(vo.getAtiva());
+		linha.setTipo(vo.getTipo());
 		return linha;
 	}
 	
@@ -26,6 +27,7 @@ public class LinhaBuilderService {
 		vo.setNumero(linha.getNumero());
 		vo.setNome(linha.getNome());
 		vo.setAtiva(linha.getAtiva());
+		vo.setTipo(linha.getTipo());
 		return vo;
 	}
 	

@@ -1,5 +1,6 @@
 package br.edu.ifce.sistematransporteapi.domain.linha.vo;
 
+import br.edu.ifce.sistematransporteapi.application.enums.TipoLinha;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,4 +10,5 @@ public class LinhaVO {
 	private Long numero;
 	private String nome;
 	private Boolean ativa;
+	private TipoLinha tipo;
 }
