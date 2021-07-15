@@ -26,7 +26,7 @@ public class BuscaHorarioService {
 		
 		switch(item) {
 		case TODAS:
-			horarioList = this.horarioRepository.findHorarioByOrderByLinhaNome(texto);
+			horarioList = this.horarioRepository.findByOrderByLinhaNomeAsc();
 			break;
 			
 		case NUMERO:

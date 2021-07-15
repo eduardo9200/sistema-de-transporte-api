@@ -15,4 +15,7 @@ public class DataObject {
 	private String fimSabado;
 	private String inicioDomingoEFeriado;
 	private String fimDomingoEFeriado;
+	private Long intervaloDiaUtil;
+	private Long intervaloSabado;
+	private Long intervaloDomingoEFeriado;
 }

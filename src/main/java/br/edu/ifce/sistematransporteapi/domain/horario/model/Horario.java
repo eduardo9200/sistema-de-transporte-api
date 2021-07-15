@@ -30,27 +30,27 @@ public class Horario {
 	@Getter @Setter
 	private Linha linha;
 	
-	@Column(name = "HORA")
+	@Column(name = "INICIODIAUTIL")
 	@Getter @Setter
 	private String inicioDiaUtil;
 	
-	@Column(name = "HORA")
+	@Column(name = "INICIOSABADO")
 	@Getter @Setter
 	private String inicioSabado;
 	
-	@Column(name = "HORA")
+	@Column(name = "INICIODOMINGOEFERIADO")
 	@Getter @Setter
 	private String inicioDomingoEFeriado;
 	
-	@Column(name = "HORA")
+	@Column(name = "FIMDIAUTIL")
 	@Getter @Setter
 	private String fimDiaUtil;
 	
-	@Column(name = "HORA")
+	@Column(name = "FIMSABADO")
 	@Getter @Setter
 	private String fimSabado;
 	
-	@Column(name = "HORA")
+	@Column(name = "FIMDOMINGOEFERIADO")
 	@Getter @Setter
 	private String fimDomingoEFeriado;
 	

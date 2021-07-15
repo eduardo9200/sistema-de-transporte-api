@@ -13,9 +13,9 @@ import br.edu.ifce.sistematransporteapi.domain.horario.model.Horario;
 @Repository
 public interface HorarioRepository extends JpaRepository<Horario, Long> {
 
-	public List<Horario> findHorarioByOrderByLinhaNome(String nome);
+	public List<Horario> findByOrderByLinhaNomeAsc();
 	
-	public Optional<Horario> findByLinhaNumero(Long numero);
+	public Optional<Horario> findByLinhaNumero(long numero);
 	
 	@Query("SELECT h FROM Horario h WHERE UPPER(h.linha.nome) LIKE UPPER(CONCAT('%', :nome, '%'))")
 	public List<Horario> buscaPeloNomeLinha(@Param("nome") String nome);

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.edu.ifce.sistematransporteapi.domain.home.service.BuscaDadosService;
 import br.edu.ifce.sistematransporteapi.domain.home.vo.DataList;
+import br.edu.ifce.sistematransporteapi.domain.home.vo.QuantidadeTiposDeLinha;
 
 @RestController
 @RequestMapping("home")
@@ -20,5 +21,10 @@ public class HomeController {
 	@GetMapping(value = "/buscar-dados")
 	public List<DataList> getDataList() {
 		return this.buscaDadosService.buscaDados();
+	}
+	
+	@GetMapping(value = "/buscar-quantitativos-tipos-de-linha")
+	public List<QuantidadeTiposDeLinha> getQuantidadeTipos() {
+		return this.buscaDadosService.buscaQuantidadeTiposDeLinhas();
 	}
 }
